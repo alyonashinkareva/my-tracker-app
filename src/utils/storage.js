@@ -3,6 +3,7 @@ const LIBRARY_KEY = 'my_exercise_library';
 const CATEGORIES_KEY = 'my_categories';
 const HABITS_KEY = 'my_habits';
 const MEASUREMENTS_KEY = 'my_measurements';
+const USER_NAME_KEY = 'my_tracker_user_name';
 
 export const storage = {
   saveWorkouts: (data) => localStorage.setItem(WORKOUTS_KEY, JSON.stringify(data)),
@@ -19,4 +20,7 @@ export const storage = {
 
   saveMeasurements: (data) => localStorage.setItem(MEASUREMENTS_KEY, JSON.stringify(data)),
   getMeasurements: () => JSON.parse(localStorage.getItem(MEASUREMENTS_KEY) || '[]'),
+
+  saveUserName: (name) => localStorage.setItem(USER_NAME_KEY, name),
+  getUserName: () => localStorage.getItem(USER_NAME_KEY) || 'Алёна',
 };
