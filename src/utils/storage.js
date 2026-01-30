@@ -1,0 +1,22 @@
+const WORKOUTS_KEY = 'my_workouts_data';
+const LIBRARY_KEY = 'my_exercise_library';
+const CATEGORIES_KEY = 'my_categories';
+const HABITS_KEY = 'my_habits';
+const MEASUREMENTS_KEY = 'my_measurements';
+
+export const storage = {
+  saveWorkouts: (data) => localStorage.setItem(WORKOUTS_KEY, JSON.stringify(data)),
+  getWorkouts: () => JSON.parse(localStorage.getItem(WORKOUTS_KEY) || '[]'),
+  
+  saveLibrary: (data) => localStorage.setItem(LIBRARY_KEY, JSON.stringify(data)),
+  getLibrary: () => JSON.parse(localStorage.getItem(LIBRARY_KEY) || '[]'),
+
+  saveCategories: (data) => localStorage.setItem(CATEGORIES_KEY, JSON.stringify(data)),
+  getCategories: () => JSON.parse(localStorage.getItem(CATEGORIES_KEY) || '[]'),
+
+  saveHabits: (data) => localStorage.setItem(HABITS_KEY, JSON.stringify(data)),
+  getHabits: () => JSON.parse(localStorage.getItem(HABITS_KEY) || '[]'),
+
+  saveMeasurements: (data) => localStorage.setItem(MEASUREMENTS_KEY, JSON.stringify(data)),
+  getMeasurements: () => JSON.parse(localStorage.getItem(MEASUREMENTS_KEY) || '[]'),
+};
