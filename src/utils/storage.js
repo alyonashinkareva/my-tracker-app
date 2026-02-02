@@ -4,8 +4,9 @@ const CATEGORIES_KEY = 'my_categories';
 const HABITS_KEY = 'my_habits';
 const MEASUREMENTS_KEY = 'my_measurements';
 const USER_NAME_KEY = 'my_tracker_user_name';
-const PLANS_KEY = 'my_workout_plans'; // Планы
-const DRAFT_KEY = 'my_workout_draft'; // Черновик
+const PLANS_KEY = 'my_workout_plans';
+const NUTRITION_KEY = 'my_nutrition_data';
+const DRAFT_KEY = 'my_workout_draft';
 
 export const storage = {
   saveWorkouts: (data) => localStorage.setItem(WORKOUTS_KEY, JSON.stringify(data)),
@@ -28,6 +29,9 @@ export const storage = {
 
   savePlans: (data) => localStorage.setItem(PLANS_KEY, JSON.stringify(data)),
   getPlans: () => JSON.parse(localStorage.getItem(PLANS_KEY) || '[]'),
+
+  saveNutrition: (data) => localStorage.setItem(NUTRITION_KEY, JSON.stringify(data)),
+  getNutrition: () => JSON.parse(localStorage.getItem(NUTRITION_KEY) || '[]'),
 
   saveDraft: (data) => localStorage.setItem(DRAFT_KEY, JSON.stringify(data)),
   getDraft: () => JSON.parse(localStorage.getItem(DRAFT_KEY) || 'null'),
